@@ -1,20 +1,27 @@
 package com.mycompany.app;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-{
-    /**
-     * Rigorous Test :-)
-     */
-    @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
-    }
+public class AppTest {
+
+	private App cut;
+	
+	@Before
+	public void setUp() throws Exception {
+		cut = new App();
+	}
+
+	@Test
+	public void testSaludo() {
+		// Preparar
+		
+		// Ejecutar
+		String res = cut.saludo();
+		// Verificar
+		assertEquals("El mensaje no era la bienvenida esperada","Hola",res);
+	}
+
 }
